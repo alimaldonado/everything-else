@@ -1,0 +1,18 @@
+# Front End Developer Test
+Basic login form made with Twig templates.
+The application consists of two php files: index, where the site logic can be found and user where we can find the user object and the avaibable users array.
+
+## Installation
+After cloning repository, run `composer install` to install the twig dependency
+then, you can run `php -S localhost:8000` (or use prefered port) to serve the application
+
+## Available users
+The application has two users, the "admin" user and the "john_doe" user, both with password "secure".
+
+When the $isAdminLogin variable is set to true at index.php, only the admin user can submit a valid login and viceversa: john_doe can only login if $isAdminLogin is set to false.
+
+If any user logs in successfully, the $totalSiteLogins variable will increment. The sites login will be set to "0.00" untill the first sucessful login is made, and after that, the variable will be set from $_SESSION["totalSiteLogins"], so the count can be saved between requests.
+
+The submit button is rendered from it's variable at index.php
+
+The twig template will warn when you're on admin login or on user login
